@@ -44,12 +44,18 @@ public class Main {
 //        System.out.println(response.headers());
 
 
+//
+//                UserApiHandler apiHandler = new UserApiHandler();
+//                HttpResponse<String> response = apiHandler.getUserDate(1);
+//
+//                User user = UserMapper.convertJSONToUser(response.body());
+//                System.out.println(user);
 
-                UserApiHandler apiHandler = new UserApiHandler();
-                HttpResponse<String> response = apiHandler.getUserDate(1);
 
-                User user = UserMapper.convertJSONToUser(response.body());
-                System.out.println(user);
+        UserApiHandler apiHandler = new UserApiHandler();
+        UserService userService = new UserService(apiHandler);
+
+        System.out.println(userService.getUserById(1));
 
 
     }

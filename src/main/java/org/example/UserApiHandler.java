@@ -14,7 +14,7 @@ public class UserApiHandler {
 
     public HttpResponse<String> getUserDate(int userId) {
         try {
-            HttpRequest request = HttpRequest.newBuilder(new URI(userURL + "/")).GET().build();
+            HttpRequest request = HttpRequest.newBuilder(new URI(userURL + "/" + userId)).GET().build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -23,6 +23,7 @@ public class UserApiHandler {
             throw new RuntimeException(e);
         }
     }
+
     public HttpResponse<String> postUserData(String userJSON) {
         try {
             HttpRequest request = HttpRequest.newBuilder(new URI(userURL))

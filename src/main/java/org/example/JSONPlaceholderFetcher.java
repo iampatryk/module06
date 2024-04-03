@@ -1,12 +1,18 @@
 package org.example;
 
+import java.net.http.HttpClient;
+import java.net.http.HttpResponse;
+
 public class JSONPlaceholderFetcher {
+
+   final HttpClient client = HttpClient.newBuilder().build();
 
     // używając metody GET, zapytaj o pojedynczy post,
     // używając podanego id przy budowie URI i zwróć ten post;
-
     public String getSinglePost(int id) {
-        System.out.println("a : " + "\n");
+
+
+
         return " ";
     }
 
